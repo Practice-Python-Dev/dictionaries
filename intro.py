@@ -112,19 +112,132 @@ print('\n' + ('-' *30))
 # ITERATE OVER DICTIONARIES
 #------------------------------
 
+print("ITERATE OVER DICTIONARIES:\n")
 
+vid_games = {'Halo': 3.5, 'Call of Duty': 4.5, 'Assasins Creed': 5.0}
 
+#----- FOR LOOP (INEFFICIENT) -----
 
+# This will give us all the keys ...
+for item in vid_games:
+    print(item)
+print()
 
+# This will give us all the values ...
+for item in vid_games:
+    print(vid_games[item])
 
+#<hr>
+print('\n' + ('-' *30))
 
+#----- THE ITEMS() METHOD -----
 
+# The 'items()' method returns a list of tuples (when called on a dictionary)
+    # Each tuple contains a key and value for every item in the dictionary
+    # Note, the method loops over a list of tuples representing the dictionaries keys and values
+    # (instead of iterating directly over the dictionary)
 
+print("Call 'list.items()' method on dictionary:")
+print(vid_games.items(), '\n')
 
+# Print out each tuple in course.items()
+for item in vid_games.items():
+    print(item)
+print()
+
+#----- USE MULTIPLE ASSIGNMENT -----
+
+# Access the key and value separate from one another ...
+for key, value in vid_games.items():
+    print(key, 'was rated', value, '/ 10')
+
+#<hr>
+print('\n' + ('-' *30))
 
 #------------------------------
-# PACKING / UNPACKING (DICTIONARIES)
+# PACKING VARIABLE ARGUMENTS
 #------------------------------
+
+# Add "a series of variable arguments" into a signle dictionary
+    # Each variable name becomes a key
+    # Each variable reference becomes a corresponding value
+
+# Compare:
+    # When packing with python sequences
+    # We pass multiple positional arguments
+    # and capture them into a tuple
+
+# Compare:
+    # When packing with python dictionaries
+    # We pass multiple variable arguments
+    # and capture them into a dictioary
+
+# What's a variable argument?
+    # When we call functions we usually pass positional arguments
+    # (comma separated values received by the function in the order wich they're sent)
+    # The key difference between variable arguments and poisitonal arguments is for
+    # for variable arguments the order doesn't matter. AND, unlike positional arguments they're named
+
+#----- CREATE A SIMPLE FUNCTION -----
+
+def print_teacher(name, job, topic):
+    print(name)
+    print(job)
+    print(topic)
+
+#----- USE POSITIONAL ARGUMENTS -----
+
+print_teacher('Ashley', 'Instructor', 'Python')
+print()
+
+#----- USE VARIABLE ARGUMENTS -----
+
+# Problem:
+    # If our function call is not placed close to its function definition
+    # it becomes less obvious what the positional arguments are for
+    # (hard to remember and for others to understand)
+
+# Resolution:
+    # Add clarity to your code by using variable arguments
+    # (also referred to as "keyword arguements" or "named arguments")
+
+# Variable names have to mach the parameter names in our definition
+    # This is how Python matches arguments and parameters when the order doesn't matter
+    # To convert the positional arguments to variable arguments,
+    # simply make them look like variable assignements
+    # (variable names HAVE TO MATCH the parameter names in the function definition)
+
+print_teacher(name='Ashley', job='Instructor', topic='Python')
+
+#<hr>
+print('\n' + ('-' *30))
+
+#------------------------------
+# UNKNOWN VARIABLE ARGUMENTS
+#------------------------------
+
+#----- PASS UNKNOWN VARIABLE ARGUMENTS -----
+
+###### 4:20
+
+###### WHY????
+
+# "So, just like when our code can call for passing an unknown or arbitrary number
+# of positional arguments to a function, it might also call for passing an unknown
+# or arbitrary number of variable arguments to a functin.""
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
@@ -137,4 +250,4 @@ print('\n' + ('-' *30))
 
 
 #<hr>
-print('\n' *2)
+print('\n')
